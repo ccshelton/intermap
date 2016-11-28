@@ -40,9 +40,14 @@ GEM
       rails (>= 3.1)
       request_store (>= 1.0.5)
     arel (6.0.3)
+    autoprefixer-rails (6.3.6.1)
+      execjs
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.6)
     coffee-rails (4.1.1)
@@ -158,6 +163,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_tenant
+  bootstrap-sass (~> 3.3.6)
   byebug
   coffee-rails (~> 4.1.0)
   devise
