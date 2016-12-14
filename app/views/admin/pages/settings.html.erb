@@ -1,0 +1,14 @@
+<div class="admin-main-wrapper">
+  <div class="container-fluid">
+    <div class="settings-row">
+      <%= form_for @app, :html => {:class => "form-inline"} do |f| %>
+        <div class="form-group">
+          <%= f.label :intercom_id, "Intercom app id" %>:
+          <%= f.text_field :intercom_id, class: "form-control"%><br />
+        </div>
+        <br>
+        <%= f.submit "Update", class: "btn-primary btn" %>
+      <% end %>
+    </div>
+  </div>
+</div>
