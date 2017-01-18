@@ -7,11 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="admin-body">
-
-<main>
-  <%= render "/admin/shared/header" %>
-  <%= yield %>
-</main>
-
+  <main>
+    <%= render 'shared/flash' %>
+    <%= render "/admin/shared/header" %>
+    <%= yield %>
+  </main>
 </body>
 </html>

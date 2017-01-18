@@ -1,0 +1,12 @@
+<%= form_for @app do |f| %>
+  <div class="form-group">
+    <%= f.label :intercom_id, "Intercom app id" %>:
+    <%= f.text_field :intercom_id, class: "form-control"%><br />
+  </div>
+  <div class="form-group">
+    <%= f.label :subdomain, "Subdomain" %>:
+    <%= f.text_field :subdomain, class: "form-control"%><br />
+  </div>
+  <br>
+  <%= f.submit "Update", class: "btn-primary btn" %>
+<% end %>

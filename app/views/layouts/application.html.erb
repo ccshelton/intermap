@@ -9,10 +9,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<main>
-  <%= yield %>
-</main>
-
+  <main>
+    <%= render 'shared/flash' %>
+    <%= yield %>
+  </main>
 </body>
 </html>

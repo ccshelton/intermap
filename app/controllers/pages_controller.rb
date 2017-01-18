@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   def home
-    @users = User.all
+    if current_admin
+      redirect_to '/apps/new'
+    end
   end
 end

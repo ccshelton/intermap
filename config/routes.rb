@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :admins
 
   namespace :admin do
-    get '/', :to => "pages#settings"
+    get '/settings', :to => "pages#settings"
   end
 
   constraints subdomain: true do
+    devise_for :users
     root to: 'apps#index'
   end
 
