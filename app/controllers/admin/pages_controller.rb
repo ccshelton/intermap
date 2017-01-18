@@ -11,6 +11,7 @@ class Admin::PagesController < ApplicationController
       @app = current_tenant
       unless current_user && current_user.id == @app.admin_id
         redirect_to root_path
+        flash[:error] = "You do not have permission to access that page"
       end
     end
 end

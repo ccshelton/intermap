@@ -21,12 +21,6 @@ footer .copyright {
     text-align: center
 }
 
-body {
-    font-family: Lora, 'Times New Roman', serif;
-    font-size: 20px;
-    -webkit-tap-highlight-color: #0085A1
-}
-
 .intro-header .page-heading .subheading,
 .intro-header .post-heading .subheading,
 .intro-header .site-heading .subheading,
@@ -76,7 +70,7 @@ hr.small {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 3
+    z-index: 1;
 }
 
 .navbar-custom .navbar-header .navbar-toggle {
