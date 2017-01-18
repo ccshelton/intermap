@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128022303) do
+ActiveRecord::Schema.define(version: 20170118022553) do
 
   create_table "apps", force: :cascade do |t|
     t.string   "subdomain"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "intercom_id"
+    t.integer  "admin_id"
   end
 
   create_table "users", force: :cascade do |t|
