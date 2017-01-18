@@ -3,5 +3,10 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Bellhop Admin</a>
     </div>
+    <ul class="pull-right">
+      <li>
+        <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
+      </li>
+    </ul>
   </div>
 </header>

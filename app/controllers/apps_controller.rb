@@ -1,5 +1,6 @@
 class AppsController < ApplicationController
-  layout "admin_layout"
+  layout :resolve_layout
+
   def index
   end
 
@@ -28,5 +29,13 @@ class AppsController < ApplicationController
   private
     def app_params
       params.require(:app).permit(:intercom_id, :subdomain)
+    end
+
+    def resolve_layout
+      if action_name == 'new'
+        'admin_layout'
+      else
+        'apps_layout'
+      end
     end
 end
