@@ -1,3 +1,3 @@
 class App < ActiveRecord::Base
-  has_one :admin
+  belongs_to :admin
 end

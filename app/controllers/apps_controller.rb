@@ -9,7 +9,7 @@ class AppsController < ApplicationController
   end
 
   def create
-    @app = App.new(app_params)
+    @app = current_admin.apps.new(app_params)
     if @app.save
       redirect_to root_url(subdomain: @app.subdomain)
     else
