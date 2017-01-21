@@ -20,9 +20,9 @@ class AppsController < ApplicationController
   def update
     @app = current_tenant
     if @app.update(app_params)
-      redirect_to "/admin"
+      redirect_to "/admin/settings"
     else
-      render "/admin"
+      render "/admin/pages/settings"
     end
   end
 
@@ -32,10 +32,10 @@ class AppsController < ApplicationController
     end
 
     def resolve_layout
-      if action_name == 'new'
-        'admin_layout'
-      else
+      if action_name == 'index'
         'apps_layout'
+      else
+        'admin_layout'
       end
     end
 end
