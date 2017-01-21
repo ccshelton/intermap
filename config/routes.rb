@@ -12,7 +12,6 @@ Rails.application.routes.draw do
 
   constraints subdomain: false do
     get '/', :to => 'pages#home'
+    resources :apps, only: [:index, :new, :create, :update]
   end
-
-  resources :apps, only: [:index, :new, :create, :update]
 end
