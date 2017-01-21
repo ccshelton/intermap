@@ -1,17 +1,115 @@
 .admin-body {
-  background: #f1f1f1;
+  background: #fafbfc;
+  padding: 0;
+  margin: 0
 }
 
 .admin-main-wrapper {
-  width: 1000px;
   margin: 0 auto;
   display: block;
+  padding: 30px 0;
+  float: left;
+  width: 85%;
 }
 
-.settings-row {
+.settings-wrapper {
+  width: 640px;
+  margin: 0 auto;
+}
+
+.settings-card {
   background: #fff;
-  border-bottom: #ddd 2px solid;
-  padding: 20px 30px;
+  border: #efedf5 1px solid;
+  padding: 30px;
+  border-radius: 5px;
   margin-bottom: 30px;
+
+  .title {
+    font-weight: 400;
+    font-size: 23px;
+    color: #043D5D;
+    margin-bottom: 25px;
+  }
+
+  form {
+    label {
+      // font-weight: 200;
+      font-size: 14px;
+      color: #043D5D;
+    }
+
+    input {
+      border: #efedf5 1px solid;
+      box-shadow: none;
+      outline: none;
+      color: #555;
+      font-size: 14px;
+      font-weight: 200;
+      letter-spacing: 1px;
+    }
+
+    .submit {
+      padding: 10px 20px;
+      background: #49bb82;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    .form-group {
+      margin: 0;
+    }
+
+    .field_with_errors label {
+      color: red;
+    }
+  }
 }
 
+#admin-nav {
+  background: #043D5D;
+  margin: 0;
+  border-radius: 0;
+  border: 0;
+
+  .navbar-brand {
+    color: #49bb82;
+  }
+
+  ul {
+
+    a {
+      color: #fff
+    }
+  }
+}
+
+.admin-sidebar {
+  height: 100%;
+  background: #fff;
+  width: 15%;
+  float: left;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      color: #043D5D;
+      border-bottom: #efedf5 1px solid;
+    }
+
+    i {
+      margin-right: 5px;
+    }
+
+    a {
+      padding: 20px;
+      font-size: 16px;
+      display: block;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}

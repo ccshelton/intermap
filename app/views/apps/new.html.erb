@@ -1,24 +1,31 @@
-<%= form_for @app do |f| %>
-  <% if @app.errors.any? %>
-    <p>
-      Looks like something went wrong. Fix the following and try again.
-    </p>
-    <ul>
-      <% @app.errors.each do |attribute, message| %>
-        <li class="error">
-          <%= attribute %> <%= message %>
-        </li>
+<div class="admin-main-wrapper">
+  <div class="settings-wrapper">
+    <div class="settings-card">
+      <p class="title">Create a new app</p>
+      <%= form_for @app do |f| %>
+        <% if @app.errors.any? %>
+          <p>
+            Looks like something went wrong. Fix the following and try again.
+          </p>
+          <ul>
+            <% @app.errors.each do |attribute, message| %>
+              <li class="error">
+                <%= attribute %> <%= message %>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :intercom_id, "Intercom app id" %>
+          <%= f.text_field :intercom_id, class: "form-control"%><br />
+        </div>
+        <div class="form-group">
+          <%= f.label :subdomain, "Subdomain" %>
+          <%= f.text_field :subdomain, class: "form-control"%><br />
+        </div>
+        <br>
+        <%= f.submit "Create", class: "submit" %>
       <% end %>
-    </ul>
-  <% end %>
-  <div class="form-group">
-    <%= f.label :intercom_id, "Intercom app id" %>:
-    <%= f.text_field :intercom_id, class: "form-control"%><br />
+    </div>
   </div>
-  <div class="form-group">
-    <%= f.label :subdomain, "Subdomain" %>:
-    <%= f.text_field :subdomain, class: "form-control"%><br />
-  </div>
-  <br>
-  <%= f.submit "Update", class: "btn-primary btn" %>
-<% end %>
+</div>

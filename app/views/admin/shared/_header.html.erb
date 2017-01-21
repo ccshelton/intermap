@@ -1,9 +1,9 @@
-<header class="navbar navbar-default">
+<header class="navbar navbar-default" id="admin-nav">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Bellhop</a>
     </div>
-    <ul class="pull-right">
+    <ul class="nav navbar-nav navbar-right">
       <li>
         <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
       </li>
