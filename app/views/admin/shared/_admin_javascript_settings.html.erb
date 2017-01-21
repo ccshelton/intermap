@@ -1,0 +1,28 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active">
+    <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Logged in snippet</a>
+  </li>
+  <li role="presentation">
+    <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Logged out snippet</a>
+  </li>
+</ul>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="home">
+    <pre>
+      <code>
+  window.intercomSettings {
+    "app_id": "<%= current_tenant.intercom_id %>",
+    "email": "<%= current_admin.email %>",
+    "created_at": <%= current_admin.created_at.to_i %>
+  }
+      </code></pre>
+  </div>
+  <div  role="tabpanel" class="tab-pane" id="profile">
+    <pre>
+      <code>
+  window.intercomSettings {
+    "app_id": "<%= current_tenant.intercom_id %>"
+  }
+      </code></pre>
+  </div>
+</div>

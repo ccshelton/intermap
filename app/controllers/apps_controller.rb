@@ -20,7 +20,8 @@ class AppsController < ApplicationController
   def update
     @app = current_tenant
     if @app.update(app_params)
-      redirect_to "/admin/settings"
+      @root = root_url(subdomain: @app.subdomain)
+      redirect_to "#{@root}/admin/settings"
     else
       render "/admin/pages/settings"
     end

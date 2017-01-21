@@ -6,6 +6,10 @@ class Admin::PagesController < ApplicationController
     @app = current_tenant
   end
 
+  def javascript
+    @app = current_tenant
+  end
+
   private
     def authorize
       @app = current_tenant

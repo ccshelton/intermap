@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
     namespace :admin do
       get '/settings', :to => "pages#settings"
+      get '/javascript', :to => "pages#javascript"
     end
   end
 
