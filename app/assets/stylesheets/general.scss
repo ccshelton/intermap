@@ -8,3 +8,32 @@
   width: 400px;
   text-align: center;
 }
+
+.navbar-nav > li > .dropdown-menu {
+  padding: 0;
+  text-align: center;
+  border-radius: 0;
+  min-width: 150px;
+
+  li {
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  li:hover {
+    background: #fff;
+  }
+
+  li:hover a {
+    color: #555
+  }
+
+  a {
+    color: #555;
+    padding: 10px 20px;
+  }
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background: none;
+  color: #fff;
+}
