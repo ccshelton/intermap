@@ -4,6 +4,11 @@
       <a class="navbar-brand" href="#">Bellhop</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
+      <% if current_tenant %>
+        <li>
+          <%= link_to 'Go to site', '/', :target => "_blank" %>
+        </li>
+      <% end %>
       <li>
         <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
       </li>
