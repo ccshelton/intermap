@@ -1,23 +1,26 @@
 <ul class="nav nav-tabs" role="tablist">
   <li role="presentation" class="active">
-    <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Logged in snippet</a>
+    <a href="#logged_in" aria-controls="home" role="tab" data-toggle="tab">Logged in snippet</a>
   </li>
   <li role="presentation">
-    <a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Logged out snippet</a>
+    <a href="#logged_out" aria-controls="profile" role="tab" data-toggle="tab">Logged out snippet</a>
   </li>
 </ul>
 <div class="tab-content">
-  <div role="tabpanel" class="tab-pane active" id="home">
+  <div role="tabpanel" class="tab-pane active" id="logged_in">
     <pre>
       <code>
   window.intercomSettings {
+    <% if current_tenant.user_id_enabled %>
+    "user_id": "admin_<%= current_admin.id %>",
+    <% end %>
     "app_id": "<%= current_tenant.intercom_id %>",
     "email": "<%= current_admin.email %>",
     "created_at": <%= current_admin.created_at.to_i %>
   }
       </code></pre>
   </div>
-  <div  role="tabpanel" class="tab-pane" id="profile">
+  <div  role="tabpanel" class="tab-pane" id="logged_out">
     <pre>
       <code>
   window.intercomSettings {
