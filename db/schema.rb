@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170120042212) do
+ActiveRecord::Schema.define(version: 20170121234945) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -33,10 +33,12 @@ ActiveRecord::Schema.define(version: 20170120042212) do
 
   create_table "apps", force: :cascade do |t|
     t.string   "subdomain"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "intercom_id"
     t.integer  "admin_id"
+    t.boolean  "user_id_enabled",     default: true
+    t.boolean  "secure_mode_enabled", default: false
   end
 
   create_table "users", force: :cascade do |t|

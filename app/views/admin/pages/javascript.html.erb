@@ -2,7 +2,30 @@
   <div class="settings-wrapper">
     <div class="settings-card">
       <p class="title">Javascript Settings</p>
-
+      <%= form_for @app do |f| %>
+        <% if @app.errors.any? %>
+          <p>
+            Looks like something went wrong. Fix the following and try again.
+          </p>
+          <ul>
+            <% @app.errors.each do |attribute, message| %>
+              <li class="error">
+                <%= attribute %> <%= message %>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+        <div class="form-group">
+          <%= f.label :user_id_enabled, "Include user_id" %>
+          <%= f.check_box :user_id_enabled %><br />
+        </div>
+        <div class="form-group">
+          <%= f.label :secure_mode_enabled, "Enable Secure mode" %>
+          <%= f.check_box :secure_mode_enabled %><br />
+        </div>
+        <br>
+        <%= f.submit "Save", class: "submit" %>
+      <% end %>
     </div>
     <div class="settings-card">
       <p class="title">Your Javascript Snippet</p>

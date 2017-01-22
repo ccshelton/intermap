@@ -20,8 +20,8 @@ class AppsController < ApplicationController
   def update
     @app = current_tenant
     if @app.update(app_params)
-      @root = root_url(subdomain: @app.subdomain)
-      redirect_to "#{@root}/admin/settings"
+      redirect_to request.referrer
+      flash[:success] = "Settings updated"
     else
       render "/admin/pages/settings"
     end
@@ -29,7 +29,7 @@ class AppsController < ApplicationController
 
   private
     def app_params
-      params.require(:app).permit(:intercom_id, :subdomain)
+      params.require(:app).permit(:intercom_id, :subdomain, :user_id_enabled, :secure_mode_enabled)
     end
 
     def resolve_layout
