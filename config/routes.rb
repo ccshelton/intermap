@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   constraints subdomain: true do
     devise_for :users
-    get '/', to: 'apps#index'
+    get '/', to: 'apps#show'
     resources :apps, only: [:update]
 
     namespace :admin do

@@ -2,6 +2,10 @@ class AppsController < ApplicationController
   layout :resolve_layout
 
   def index
+    @apps = current_admin.apps.all
+  end
+
+  def show
   end
 
   def new
@@ -33,10 +37,12 @@ class AppsController < ApplicationController
     end
 
     def resolve_layout
-      if action_name == 'index'
+      if action_name == 'show'
         'apps_layout'
-      else
+      elsif action_name == 'update'
         'admin_layout'
+      else
+        'application'
       end
     end
 end
