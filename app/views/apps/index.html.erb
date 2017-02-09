@@ -1,1 +1,19 @@
-Apps index
+<div class="container app-list-container">
+  <div class="row app-list-row">
+    <h3>Your Sites</h3>
+    <ul class="app-list">
+      <% @apps.each do |app| %>
+        <li>
+          <a href="<%= root_url(subdomain: app.subdomain) %>" class="app-card">
+            <p class="app-subdomain">
+              <%= app.subdomain %>
+            </p>
+            <p class="app-id">
+              <%= app.intercom_id %>
+            </p>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
