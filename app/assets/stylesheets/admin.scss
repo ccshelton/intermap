@@ -59,6 +59,7 @@
       background: #49bb82;
       color: #fff;
       border-radius: 5px;
+      margin-bottom: 10px;
     }
 
     .form-group {
@@ -119,4 +120,17 @@
       text-decoration: none;
     }
   }
+}
+
+.delete {
+  padding: 10px 20px;
+  background: red;
+  color: #fff;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.delete:hover, .delete:focus {
+  text-decoration: none;
+  color: #fff;
 }

@@ -31,6 +31,12 @@ class AppsController < ApplicationController
     end
   end
 
+  def destroy
+    App.find(current_tenant.id).destroy
+    flash[:success] = "App deleted"
+    redirect_to root_url(:subdomain => false)
+  end
+
   private
     def app_params
       params.require(:app).permit(:intercom_id, :subdomain, :user_id_enabled, :secure_mode_enabled)

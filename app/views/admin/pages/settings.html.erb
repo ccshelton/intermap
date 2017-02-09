@@ -27,5 +27,8 @@
         <%= f.submit "Save", class: "submit" %>
       <% end %>
     </div>
+    <div class="settings-card">
+      <%= link_to "Delete", @app, method: :delete, data: {confirm: "This will destroy the current site. Are you sure?"}, class: "delete" %>
+    </div>
   </div>
 </div>
