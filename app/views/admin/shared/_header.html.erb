@@ -7,6 +7,9 @@
       <% if current_admin %>
         <% if current_tenant %>
           <li>
+            <%= link_to 'My sites', root_url(:subdomain => false) %>
+          </li>
+          <li>
             <%= link_to 'Go to site', '/', :target => "_blank" %>
           </li>
         <% end %>
