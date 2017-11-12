@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     namespace :admin do
       get '/settings', :to => "pages#settings"
       get '/javascript', :to => "pages#javascript"
+      post '/intercom_settings', :to => "pages#intercom_settings"
+      post '/render_settings', :to => "pages#render_settings"
     end
   end
 

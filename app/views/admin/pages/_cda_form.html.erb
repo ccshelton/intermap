@@ -1,0 +1,19 @@
+<form action='/admin/intercom_settings' method="POST">
+<%= token_tag %>
+  <% @cda_count.times do %>
+    <fieldset>
+        <label style="font-weight:normal">Attribute Name</label>
+        <input ... name="intercom_settings[][field]"/>
+        <label style="font-weight:normal">Value</label>
+        <input ... name="intercom_settings[][value]" />
+        <label style="font-weight:normal">Data Type</label>
+        <select name="intercom_settings[][type]">
+          <option value="date">Date</option>
+          <option value="string">String</option>
+          <option value="float">Float</option>
+          <option value="integer">Integer</option>
+        </select>
+    </fieldset>
+  <% end %>
+  <input type="submit"/>
+</form>

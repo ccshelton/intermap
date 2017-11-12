@@ -1,0 +1,11 @@
+<form id="cda_count_form">
+<label>Number of Custom Attributes to Create</label>
+<select id="cda_count" name="cda count">
+  <% n = 1 %>
+  <% 5.times do %>
+    <option value="count"><%= n %></option>
+    <% n += 1 %>
+  <% end %>
+</select>
+<input type="submit" value="Submit">
+</form>

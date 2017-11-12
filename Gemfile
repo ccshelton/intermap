@@ -17,6 +17,7 @@ gem 'devise'
 gem 'acts_as_tenant'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem "font-awesome-rails"
+gem 'pry'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
