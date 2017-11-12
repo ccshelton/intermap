@@ -10,22 +10,13 @@
   <div role="tabpanel" class="tab-pane active" id="logged_in">
     <pre>
       <code>
-  window.intercomSettings {
-    <% if current_tenant.user_id_enabled %>
-    "user_id": "admin_<%= current_admin.id %>",
-    <% end %>
-    "app_id": "<%= current_tenant.intercom_id %>",
-    "email": "<%= current_admin.email %>",
-    "created_at": <%= current_admin.created_at.to_i %>
-  }
+        <%= logged_in_string(current_admin) %>
       </code></pre>
   </div>
   <div  role="tabpanel" class="tab-pane" id="logged_out">
     <pre>
       <code>
-  window.intercomSettings {
-    "app_id": "<%= current_tenant.intercom_id %>"
-  }
+        <%= logged_out_string %>
       </code></pre>
   </div>
 </div>
