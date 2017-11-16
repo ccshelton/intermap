@@ -32,9 +32,9 @@ module ApplicationHelper
 
   def logged_in_string(user)
     "window.intercomSettings = { #{get_custom_settings}
-        app_id: '#{current_tenant.intercom_id}',
-        email: '#{user.email}',
-        created_at: #{user.created_at.to_i}
+          app_id: '#{current_tenant.intercom_id}',
+          email: '#{user.email}',
+          created_at: #{user.created_at.to_i}
       };"
   end
 
@@ -46,9 +46,9 @@ module ApplicationHelper
 
   def get_user_id
       return "
-        user_id: 'user_#{current_user.id}'," if current_user
+          user_id: 'user_#{current_user.id}'," if current_user
       return "
-        user_id: 'admin_#{current_admin.id}'," if current_admin
+          user_id: 'admin_#{current_admin.id}'," if current_admin
   end
 
   def user_id_enabled?
