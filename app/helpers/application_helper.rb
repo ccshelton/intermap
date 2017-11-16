@@ -47,7 +47,7 @@ module ApplicationHelper
   def get_user_id
       return "
         user_id: 'user_#{current_user.id}'," if current_user
-      retirn "
+      return "
         user_id: 'admin_#{current_admin.id}'," if current_admin
   end
 
