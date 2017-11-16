@@ -1,0 +1,2 @@
+module CustomDataAttributeHelper
+end
