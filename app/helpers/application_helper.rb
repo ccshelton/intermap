@@ -11,39 +11,47 @@ module ApplicationHelper
   def intercom_settings
     if current_tenant
       if current_user
-        logged_in_js(current_user)
+        jsify(logged_in_string(current_user))
       elsif current_admin
-        logged_in_js(current_admin)
+        jsify(logged_in_string(current_admin))
       else
-        logged_out_js
+        jsify(logged_out_string)
       end
     end
   end
 
-  def logged_in_js(user)
-    javascript_tag("window.intercomSettings = {#{get_custom_settings} app_id: '#{current_tenant.intercom_id}', email: '#{user.email}', created_at: #{user.created_at.to_i}};")
+  def jsify(string)
+    javascript_tag(string)
   end
 
-  def logged_out_js
-    javascript_tag("window.intercomSettings = {app_id: '#{current_tenant.intercom_id}'};")
+  def logged_out_string
+    "window.intercomSettings = {
+          app_id: '#{current_tenant.intercom_id}'
+        };"
   end
 
-  def get_custom_settings
+  def logged_in_string(user)
+    "window.intercomSettings = { #{get_custom_settings}
+        app_id: '#{current_tenant.intercom_id}',
+        email: '#{user.email}',
+        created_at: #{user.created_at.to_i}
+      };"
+  end
+
+  def get_custom_settings(cdas=[])
     settings = ""
-    settings += get_user_id.to_s
+    settings += get_user_id if user_id_enabled?
     settings
   end
 
   def get_user_id
-    return "
+      return "
         user_id: 'user_#{current_user.id}'," if current_user
-    return "
+      return "
         user_id: 'admin_#{current_admin.id}'," if current_admin
   end
 
   def user_id_enabled?
-    if current_tenant.user_id_enabled?
-      true
-    end
+    current_tenant.user_id_enabled?
   end
 end
